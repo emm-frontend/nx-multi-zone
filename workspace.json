@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "projects": {
+    "shell-ui": {
+      "root": "apps/shell-ui",
+      "sourceRoot": "apps/shell-ui/app",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/shell-ui"
+          }
+        },
+        "serve": {
+          "executor": "@nx/next:server",
+          "options": {
+            "dev": true,
+            "port": 3000
+          }
+        }
+      }
+    },
+    "accounting": {
+      "root": "apps/accounting",
+      "sourceRoot": "apps/accounting/app",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/accounting"
+          }
+        },
+        "serve": {
+          "executor": "@nx/next:server",
+          "options": {
+            "dev": true,
+            "port": 3001
+          }
+        }
+      }
+    },
+    "hr": {
+      "root": "apps/hr",
+      "sourceRoot": "apps/hr/app",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/hr"
+          }
+        },
+        "serve": {
+          "executor": "@nx/next:server",
+          "options": {
+            "dev": true,
+            "port": 3002
+          }
+        }
+      }
+    },
+    "crm": {
+      "root": "apps/crm",
+      "sourceRoot": "apps/crm/app",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nx/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/crm"
+          }
+        },
+        "serve": {
+          "executor": "@nx/next:server",
+          "options": {
+            "dev": true,
+            "port": 3003
+          }
+        }
+      }
+    }
+  }
+}

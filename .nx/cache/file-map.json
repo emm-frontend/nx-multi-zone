@@ -1,0 +1,209 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.0.0",
+  "deps": {
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "@nx/next": "17.0.0",
+    "@nx/js": "17.0.0",
+    "@nx/react": "17.0.0",
+    "@nx/workspace": "17.0.0",
+    "@types/node": "^18",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "nx": "17.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.1.0",
+    "typescript": "^5"
+  },
+  "pathMappings": {
+    "ui/shell": [
+      "libs/ui/shell/index.ts"
+    ],
+    "ui/shared": [
+      "libs/ui/shared/index.ts"
+    ],
+    "features/chat": [
+      "libs/features/chat/index.ts"
+    ],
+    "features/notifications": [
+      "libs/features/notifications/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".nx/cache/d/daemon.log",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".nx/cache/d/server-process.json",
+        "hash": "1542651270417976791"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "15597980925895629878"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "11640919913803420877"
+      },
+      {
+        "file": ".nx/workspace-data/d/daemon.log",
+        "hash": "9230184694964702943"
+      },
+      {
+        "file": "README.md",
+        "hash": "7461361554185465025"
+      },
+      {
+        "file": "apps/accounting/app/globals.css",
+        "hash": "2866083945719690482"
+      },
+      {
+        "file": "apps/accounting/app/layout.tsx",
+        "hash": "10668156257137740665"
+      },
+      {
+        "file": "apps/accounting/app/page.tsx",
+        "hash": "14258197525265167383"
+      },
+      {
+        "file": "apps/accounting/tsconfig.json",
+        "hash": "7496444786096637797"
+      },
+      {
+        "file": "apps/crm/app/globals.css",
+        "hash": "2866083945719690482"
+      },
+      {
+        "file": "apps/crm/app/layout.tsx",
+        "hash": "10668156257137740665"
+      },
+      {
+        "file": "apps/crm/app/page.tsx",
+        "hash": "16817986968361614461"
+      },
+      {
+        "file": "apps/crm/tsconfig.json",
+        "hash": "7496444786096637797"
+      },
+      {
+        "file": "apps/hr/app/globals.css",
+        "hash": "2866083945719690482"
+      },
+      {
+        "file": "apps/hr/app/layout.tsx",
+        "hash": "10668156257137740665"
+      },
+      {
+        "file": "apps/hr/app/page.tsx",
+        "hash": "6563535752643189998"
+      },
+      {
+        "file": "apps/hr/tsconfig.json",
+        "hash": "7496444786096637797"
+      },
+      {
+        "file": "apps/shell-ui/app/globals.css",
+        "hash": "2866083945719690482"
+      },
+      {
+        "file": "apps/shell-ui/app/layout.tsx",
+        "hash": "10668156257137740665"
+      },
+      {
+        "file": "apps/shell-ui/app/page.tsx",
+        "hash": "17961688893850047422"
+      },
+      {
+        "file": "apps/shell-ui/next.config.js",
+        "hash": "12704118698353923651"
+      },
+      {
+        "file": "apps/shell-ui/tsconfig.json",
+        "hash": "7496444786096637797"
+      },
+      {
+        "file": "libs/features/chat/ChatWidget.tsx",
+        "hash": "16429182793724787548"
+      },
+      {
+        "file": "libs/features/chat/index.ts",
+        "hash": "3998575227548590630"
+      },
+      {
+        "file": "libs/features/notifications/NotificationPanel.tsx",
+        "hash": "18175507863740020642"
+      },
+      {
+        "file": "libs/features/notifications/index.ts",
+        "hash": "14539917413693121448"
+      },
+      {
+        "file": "libs/ui/shared/Button.tsx",
+        "hash": "18312540828452420627"
+      },
+      {
+        "file": "libs/ui/shared/index.ts",
+        "hash": "800111270699514579"
+      },
+      {
+        "file": "libs/ui/shell/Header.tsx",
+        "hash": "13796756090784316736"
+      },
+      {
+        "file": "libs/ui/shell/RootLayout.tsx",
+        "hash": "12564073764446249236"
+      },
+      {
+        "file": "libs/ui/shell/index.ts",
+        "hash": "14239504721467103416"
+      },
+      {
+        "file": "nx.json",
+        "hash": "12796696355999468478"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "4005945646819012862"
+      },
+      {
+        "file": "package.json",
+        "hash": "4385954912897072534"
+      },
+      {
+        "file": "postcss.config.js",
+        "hash": "1579725330904862112"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "10699693308213153668"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "11156989706788223105"
+      },
+      {
+        "file": "workspace.json",
+        "hash": "15065215021851301557"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "5096237606161226639"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "17350734552699015663"
+      }
+    ],
+    "projectFileMap": {}
+  }
+}
