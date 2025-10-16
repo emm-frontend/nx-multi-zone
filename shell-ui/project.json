@@ -1,0 +1,45 @@
+{
+  "name": "shell-ui",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shell-ui",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project shell-ui --web",
+  "targets": {
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "shell-ui:build",
+        "dev": true,
+        "port": 3000
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "shell-ui:build:development",
+          "dev": true,
+          "port": 3000
+        },
+        "production": {
+          "buildTarget": "shell-ui:build:production",
+          "dev": false,
+          "port": 3000
+        }
+      }
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/shell-ui"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "dist/shell-ui"
+        },
+        "production": {}
+      }
+    }
+  }
+}

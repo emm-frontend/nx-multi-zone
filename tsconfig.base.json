@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+      "paths": {
+        "features/chat": ["libs/features/chat/index.ts"],
+        "features/notifications": ["libs/features/notifications/index.ts"],
+        "ui/shared": ["ui/shared/src/index.ts"],
+        "ui/shell": ["ui/shell/src/index.ts"]
+      }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
