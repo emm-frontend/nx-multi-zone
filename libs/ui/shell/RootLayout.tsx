@@ -1,20 +1,19 @@
 import React from "react";
 import { Header } from "./Header";
-import { ShellProvider } from "./ShellProvider";
+import { ChatWidget } from "features/chat";
+import { NotificationPanel } from "features/notifications";
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  userId?: string;
 }
 
-export const RootLayout: React.FC<RootLayoutProps> = ({ children, userId = "12345" }) => (
+export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
   <html lang="en">
     <body>
       <Header />
       <main>{children}</main>
-      <ShellProvider userId={userId}>
-        <div />
-      </ShellProvider>
+      <ChatWidget userId="12345"  />
+      <NotificationPanel />
     </body>
   </html>
 );
