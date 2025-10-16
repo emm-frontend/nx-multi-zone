@@ -1,4 +1,23 @@
+"use client";
+import { addInfoNotification, addWarningNotification, addSuccessNotification, addErrorNotification } from "features/notifications";
+
 export default function HomePage() {
+  const handleTestNotification = (type: 'info' | 'warning' | 'success' | 'error') => {
+    switch (type) {
+      case 'info':
+        addInfoNotification('Test Info', 'This is an info notification');
+        break;
+      case 'warning':
+        addWarningNotification('Test Warning', 'This is a warning notification');
+        break;
+      case 'success':
+        addSuccessNotification('Test Success', 'This is a success notification');
+        break;
+      case 'error':
+        addErrorNotification('Test Error', 'This is an error notification');
+        break;
+    }
+  };
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -10,7 +29,7 @@ export default function HomePage() {
           <p className="text-xl text-gray-600 mb-8">
             A modern microfrontend architecture built with Next.js and Nx
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-4 mb-8">
             <a 
               href="/accounting" 
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
@@ -29,6 +48,34 @@ export default function HomePage() {
             >
               Go to CRM
             </a>
+          </div>
+          
+          {/* Test Notification Buttons */}
+          <div className="flex justify-center space-x-2">
+            <button 
+              onClick={() => handleTestNotification('info')}
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm"
+            >
+              Test Info
+            </button>
+            <button 
+              onClick={() => handleTestNotification('warning')}
+              className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors text-sm"
+            >
+              Test Warning
+            </button>
+            <button 
+              onClick={() => handleTestNotification('success')}
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm"
+            >
+              Test Success
+            </button>
+            <button 
+              onClick={() => handleTestNotification('error')}
+              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors text-sm"
+            >
+              Test Error
+            </button>
           </div>
         </div>
 

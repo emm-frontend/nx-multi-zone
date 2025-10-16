@@ -1,17 +1,33 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { useChat } from "./useChat";
+import React, { useState, useRef, useEffect, memo, useCallback } from "react";
+import { useChatStore } from "../../state/chat";
 
 export interface ChatWidgetProps {
   userId?: string;
 }
 
-export const ChatWidget: React.FC<ChatWidgetProps> = ({ userId }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const ChatWidget: React.FC<ChatWidgetProps> = memo(({ userId }) => {
   const [inputValue, setInputValue] = useState('');
   const [showQuickActions, setShowQuickActions] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { messages, isTyping, sendMessage, clearMessages } = useChat(userId);
+  
+  // Use global state store
+  const { 
+    messages, 
+    isOpen, 
+    isTyping, 
+    sendMessage, 
+    clearMessages, 
+    setIsOpen,
+    setUserId 
+  } = useChatStore();
+
+  // Set userId when component mounts or userId changes
+  useEffect(() => {
+    if (userId) {
+      setUserId(userId);
+    }
+  }, [userId, setUserId]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -21,26 +37,27 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ userId }) => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = useCallback(() => {
     if (!inputValue.trim()) return;
     sendMessage(inputValue);
     setInputValue('');
-  };
+  }, [inputValue, sendMessage]);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
-  };
+  }, [handleSendMessage]);
 
-  const handleQuickAction = (action: string) => {
+  const handleQuickAction = useCallback((action: string) => {
     sendMessage(action);
     setShowQuickActions(false);
-  };
+  }, [sendMessage]);
 
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const formatTime = (date: Date | string) => {
+    const dateObj = typeof date === 'string' ? new Date(date) : date;
+    return dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
   const quickActions = [
@@ -192,4 +209,4 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ userId }) => {
       </div>
     </div>
   );
-};
+});
