@@ -21,9 +21,6 @@
     },
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "serve": {
-      "executor": "@nx/next:server"
     }
   },
   "generators": {

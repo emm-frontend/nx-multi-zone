@@ -31,6 +31,20 @@ npm install
 
 2. Start all applications in development mode:
 
+### Option 1: Start All Applications at Once (Recommended)
+```bash
+# Start all applications with one command (kills existing processes on ports)
+npm run start:all
+# or
+npm run dev
+
+# Cross-platform Node.js version (Windows/Mac/Linux)
+npm run start:all:js
+# or
+npm run dev:js
+```
+
+### Option 2: Start Applications Individually
 ```bash
 # Terminal 1 - Shell UI (Port 3000)
 npm run serve:shell
@@ -44,6 +58,21 @@ npm run serve:hr
 # Terminal 4 - CRM (Port 3003)
 npm run serve:crm
 ```
+
+### Additional Scripts
+```bash
+# Check status of all applications
+npm run status
+
+# Stop all running applications (kills processes and frees ports)
+npm run stop:all
+```
+
+### Port Management Features
+- **Automatic Port Cleanup**: Scripts automatically kill any existing processes on ports 3000-3003
+- **Cross-Platform Support**: Works on Windows, macOS, and Linux
+- **Process Tracking**: Monitors and manages application PIDs
+- **Graceful Shutdown**: Properly terminates all applications and frees ports
 
 ### Alternative: Using Nx directly
 
@@ -124,9 +153,39 @@ nx-multi-zone/
 └── postcss.config.js
 ```
 
-## 🎨 Styling
+## 🎨 UI Features
 
-This project uses **Tailwind CSS** for styling. All applications share the same Tailwind configuration and can use utility classes for consistent styling.
+### Modern Design System
+- **Tailwind CSS** for consistent styling across all applications
+- **Apple-style minimal UI** with clean, modern components
+- **Responsive design** that works on all device sizes
+- **Interactive components** with hover effects and smooth transitions
+
+### Enhanced Components
+- **Navigation Header** with dropdown menus for each application
+- **Live Chat Widget** with interactive messaging interface
+- **Notification Panel** with real-time updates and status indicators
+- **Dashboard Cards** with statistics and quick actions
+- **Professional Layout** with proper spacing and typography
+- **Dropdown Navigation** with hover menus for easy access to sub-routes
+
+### Application-Specific UIs
+- **Shell UI**: Welcome dashboard with feature overview and navigation
+- **Accounting**: Financial dashboard with revenue, expenses, and transaction history
+  - `/accounting` - Main dashboard
+  - `/accounting/invoices` - Invoice management
+  - `/accounting/expenses` - Expense tracking
+  - `/accounting/reports` - Financial reports
+- **HR**: Employee management with directory, activities, and HR processes
+  - `/hr` - Main dashboard
+  - `/hr/employees` - Employee directory
+  - `/hr/recruitment` - Job postings and candidates
+  - `/hr/payroll` - Payroll processing
+- **CRM**: Customer relationship management with sales pipeline and lead tracking
+  - `/crm` - Main dashboard
+  - `/crm/leads` - Lead management
+  - `/crm/contacts` - Contact directory
+  - `/crm/deals` - Sales opportunities
 
 ## 🔧 Development
 

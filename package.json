@@ -8,17 +8,25 @@
     "serve:shell": "nx serve shell-ui",
     "serve:accounting": "nx serve accounting",
     "serve:hr": "nx serve hr",
-    "serve:crm": "nx serve crm"
+    "serve:crm": "nx serve crm",
+    "start:all": "./scripts/start-all.sh",
+    "start:all:js": "node scripts/start-all.js",
+    "stop:all": "./scripts/stop-all.sh",
+    "status": "./scripts/status.sh",
+    "dev": "npm run start:all",
+    "dev:js": "npm run start:all:js"
   },
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
-    "@nx/next": "17.0.0",
     "@nx/js": "17.0.0",
+    "@nx/next": "17.0.0",
     "@nx/react": "17.0.0",
     "@nx/workspace": "17.0.0",
     "@types/node": "^18",

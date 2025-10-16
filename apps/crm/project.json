@@ -1,0 +1,36 @@
+{
+  "name": "crm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/crm/app",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/crm"
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "crm:build",
+        "dev": true,
+        "port": 3003
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "crm:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "crm:build:production",
+          "dev": false
+        }
+      }
+    }
+  },
+  "tags": []
+}

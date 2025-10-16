@@ -1,0 +1,36 @@
+{
+  "name": "accounting",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/accounting/app",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/accounting"
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "accounting:build",
+        "dev": true,
+        "port": 3001
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "accounting:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "accounting:build:production",
+          "dev": false
+        }
+      }
+    }
+  },
+  "tags": []
+}

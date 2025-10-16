@@ -12,7 +12,7 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
     <body>
       <Header />
       <main>{children}</main>
-      <ChatWidget userId="12345" />
+      <ChatWidget userId="12345" isOpen={true} />
       <NotificationPanel />
     </body>
   </html>
